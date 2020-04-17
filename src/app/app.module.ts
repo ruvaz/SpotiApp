@@ -7,12 +7,13 @@ import {SearchComponent} from './components/search/search.component';
 import {ArtistaComponent} from './components/artista/artista.component';
 import {NavbarComponent} from './components/shared/navbar/navbar.component';
 
-
-// agregar router al proyecto
+// configuracion de router
 import {RouterModule} from '@angular/router';
 import {ROUTES} from './app.routes';
-
+// cliente http
 import {HttpClientModule} from '@angular/common/http';
+// spotify service
+import {SpotifyService} from './services/spotify.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import {HttpClientModule} from '@angular/common/http';
     HttpClientModule,
     RouterModule.forRoot(ROUTES, {useHash: true}) // agregar router al proyecto
   ],
-  providers: [],
+  providers: [SpotifyService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
