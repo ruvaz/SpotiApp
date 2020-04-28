@@ -1,0 +1,35 @@
+ng new spotiapp
+ng g c components/home
+ng g c components/search   -is
+ng g c components/artista   -is
+ng g c components/shared/navbar   -is
+
+
+
+1o importar algo en el app.module  que nos permita hacer peticiones http
+
+	1. import {HttpClientModule} from '@angular/common/http';
+	2. agregar en imports: [
+
+		HttpClientModule,
+
+dentrode un modulo de un componente agregar:
+	1. import {HttpClient} from '@angular/common/http';
+	2. constructor(private http: HttpClient) { }
+
+
+
+Es mejotr generar un SERVICIO PAra centralizar la info
+
+ng g s services/spotify
+
+
+los servicios hay que incluirlos en el app.module en la seccion de providers
+
+crear un pipe para filtrar imagenes vacias
+ng g p pipes/noimage --spec=false
+
+#crear componente shared tarjetas
+ng g c components/tarjetas
+
+ng g c components/shared/loading
